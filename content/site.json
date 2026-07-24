@@ -98,13 +98,21 @@
     {
       "enabled": true,
       "url": "https://www.instagram.com/raymavls/",
+      "icon": "/media/instagram-logo-instagram-icon-transparent-free-png.webp",
       "riddle": {
         "es": "Cuanto más seco estoy, más mojado te dejo. ¿Qué soy?",
         "en": "The drier I am, the wetter I make you. What am I?",
         "fr": "Plus je suis sec, plus je te rends mouillé. Que suis-je ?",
         "pt": "Quanto mais seco estou, mais molhado eu te deixo. O que sou?",
         "de": "Je trockener ich bin, desto nasser mache ich dich. Was bin ich?"
-      }
+      },
+      "answers": [
+        "toalla",
+        "towel",
+        "serviette",
+        "toalha",
+        "handtuch"
+      ]
     }
   ]
 }
