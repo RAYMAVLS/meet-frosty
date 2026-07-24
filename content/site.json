@@ -2,8 +2,8 @@
   "links": [
     {
       "enabled": true,
-      "url": "https://instagram.com/",
-      "icon": "https://cdn.simpleicons.org/instagram/eeeeee",
+      "url": "https://discord.com/users/1095426672678944770",
+      "icon": "/media/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.webp",
       "riddle": {
         "es": "Tengo ciudades, pero no casas. Tengo montañas, pero no árboles. Tengo agua, pero no peces. ¿Qué soy?",
         "en": "I have cities, but no houses. Mountains, but no trees. Water, but no fish. What am I?",
@@ -19,11 +19,10 @@
         "karte"
       ]
     },
-
     {
       "enabled": true,
-      "url": "https://x.com/",
-      "icon": "https://cdn.simpleicons.org/x/eeeeee",
+      "url": "https://www.tiktok.com/@raymavls",
+      "icon": "/media/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.webp",
       "riddle": {
         "es": "Mientras más me quitas, más grande me vuelvo. ¿Qué soy?",
         "en": "The more you take away from me, the larger I become. What am I?",
@@ -39,11 +38,10 @@
         "loch"
       ]
     },
-
     {
       "enabled": true,
-      "url": "https://open.spotify.com/",
-      "icon": "https://cdn.simpleicons.org/spotify/eeeeee",
+      "url": "https://music.apple.com/profile/RaymAvls",
+      "icon": "/media/Itunes-music-app-icon.png",
       "riddle": {
         "es": "Si me nombras, desaparezco. ¿Qué soy?",
         "en": "If you name me, I disappear. What am I?",
@@ -59,11 +57,10 @@
         "stille"
       ]
     },
-
     {
       "enabled": true,
-      "url": "https://discord.com/",
-      "icon": "https://cdn.simpleicons.org/discord/eeeeee",
+      "url": "https://raymavls.github.io",
+      "icon": "/media/pngtree-watercolor-library-book-clip-art-png-image_13391689.png",
       "riddle": {
         "es": "No tengo vida, pero puedo morir. No tengo pulmones, pero necesito aire. ¿Qué soy?",
         "en": "I am not alive, yet I can die. I have no lungs, yet I need air. What am I?",
@@ -79,11 +76,9 @@
         "feuer"
       ]
     },
-
     {
-      "enabled": true,
+      "enabled": false,
       "url": "https://example.com/",
-      "icon": "https://cdn.simpleicons.org/github/eeeeee",
       "riddle": {
         "es": "Hay algo que te pertenece, pero los demás lo usan más que tú. ¿Qué es?",
         "en": "Something belongs to you, but other people use it more than you do. What is it?",
