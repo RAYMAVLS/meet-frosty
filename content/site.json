@@ -15,7 +15,6 @@
         "mapa",
         "map",
         "carte",
-        "mapa",
         "karte"
       ]
     },
@@ -52,7 +51,6 @@
       "answers": [
         "silencio",
         "silence",
-        "silence",
         "silêncio",
         "stille"
       ]
@@ -78,7 +76,7 @@
     },
     {
       "enabled": true,
-      "url": "t.me/RaymAvls",
+      "url": "https://t.me/RaymAvls",
       "icon": "/media/telegram-logo-telegram-logo-transparent-telegram-icon-transparent-free-free-png.webp",
       "riddle": {
         "es": "Hay algo que te pertenece, pero los demás lo usan más que tú. ¿Qué es?",
@@ -91,8 +89,7 @@
         "nombre",
         "name",
         "nom",
-        "nome",
-        "name"
+        "nome"
       ]
     },
     {
