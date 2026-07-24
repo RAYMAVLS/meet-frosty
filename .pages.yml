@@ -1,1 +1,61 @@
+media:
+  input: media
+  output: /media
 
+content:
+  - name: frosty
+    label: Lic. Frosty
+    type: file
+    path: content/site.json
+    format: json
+
+    fields:
+      - name: links
+        label: Enlaces y acertijos
+        type: object
+        list: true
+
+        fields:
+          - name: enabled
+            label: Visible
+            type: boolean
+            default: true
+
+          - name: url
+            label: Enlace
+            type: string
+            required: true
+
+          - name: icon
+            label: Icono
+            type: image
+
+          - name: riddle
+            label: Acertijo
+            type: object
+
+            fields:
+              - name: es
+                label: Español
+                type: text
+
+              - name: en
+                label: English
+                type: text
+
+              - name: fr
+                label: Français
+                type: text
+
+              - name: pt
+                label: Português
+                type: text
+
+              - name: de
+                label: Deutsch
+                type: text
+
+          - name: answers
+            label: Respuestas aceptadas
+            type: string
+            list: true
