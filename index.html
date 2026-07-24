@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow, noarchive"
+  >
+
+  <meta
+    name="theme-color"
+    content="#080808"
+  >
+
+  <title>Lic. Frosty</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <main class="page">
+
+    <header class="header">
+      <h1>Lic. Frosty</h1>
+
+      <div class="language-selector" aria-label="Language">
+        <button data-lang="es" class="language active">ES</button>
+        <button data-lang="en" class="language">EN</button>
+        <button data-lang="fr" class="language">FR</button>
+        <button data-lang="pt" class="language">PT</button>
+        <button data-lang="de" class="language">DE</button>
+      </div>
+    </header>
+
+
+    <section
+      id="puzzleArea"
+      class="puzzle-area"
+      aria-live="polite"
+    ></section>
+
+
+    <section
+      id="linksArea"
+      class="links-area"
+      aria-label="Links"
+    ></section>
+
+
+    <button
+      id="resetButton"
+      class="reset-button"
+      aria-label="Reset"
+      title="Reset"
+    >
+      ↺
+    </button>
+
+  </main>
+
+
+  <div
+    id="message"
+    class="message"
+    aria-live="polite"
+  ></div>
+
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
