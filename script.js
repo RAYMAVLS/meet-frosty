@@ -44,7 +44,6 @@ const UI = {
   }
 };
 
-
 let siteData = null;
 
 let language =
@@ -54,7 +53,6 @@ let unlocked =
   Number(
     localStorage.getItem(STORAGE_KEYS.unlocked)
   ) || 0;
-
 
 const puzzleArea =
   document.getElementById("puzzleArea");
@@ -129,9 +127,30 @@ async function init() {
 ------------------------- */
 
 function render() {
+  resetPuzzleArea();
   renderLanguages();
   renderLinks();
   renderPuzzle();
+}
+
+
+/* -------------------------
+   RESET PUZZLE VISUAL STATE
+------------------------- */
+
+function resetPuzzleArea() {
+  if (!puzzleArea) {
+    return;
+  }
+
+  puzzleArea
+    .getAnimations()
+    .forEach(animation => {
+      animation.cancel();
+    });
+
+  puzzleArea.style.opacity = "1";
+  puzzleArea.style.transform = "none";
 }
 
 
@@ -209,6 +228,8 @@ document
 ------------------------- */
 
 function renderPuzzle() {
+  resetPuzzleArea();
+
   puzzleArea.innerHTML = "";
 
   if (
@@ -232,15 +253,22 @@ function renderPuzzle() {
     return;
   }
 
-
   const currentLink =
     siteData.links[unlocked];
+
+  if (!currentLink) {
+    console.error(
+      "No link found for index:",
+      unlocked
+    );
+
+    return;
+  }
 
   const puzzleText =
     getLocalizedText(
       currentLink.riddle
     );
-
 
   const puzzle =
     document.createElement("div");
@@ -356,7 +384,11 @@ function renderPuzzle() {
 
 
   setTimeout(
-    () => input.focus(),
+    () => {
+      if (document.body.contains(input)) {
+        input.focus();
+      }
+    },
     150
   );
 }
@@ -380,7 +412,6 @@ function checkAnswer(
       ? link.answers
       : [];
 
-
   const accepted =
     answers.some(answer => {
 
@@ -391,15 +422,19 @@ function checkAnswer(
 
     });
 
-
   if (!submitted) {
     return;
   }
 
-
   if (accepted) {
 
     unlocked += 1;
+
+    unlocked =
+      Math.min(
+        unlocked,
+        siteData.links.length
+      );
 
     localStorage.setItem(
       STORAGE_KEYS.unlocked,
@@ -412,83 +447,57 @@ function checkAnswer(
 
     renderLinks();
 
+    resetPuzzleArea();
 
-    puzzleArea.animate(
+    renderPuzzle();
+
+    return;
+  }
+
+  showMessage(
+    UI[language].incorrect
+  );
+
+  const input =
+    document.querySelector(
+      ".answer-input"
+    );
+
+  if (input) {
+
+    input.animate(
       [
         {
-          opacity: 1,
           transform:
-            "translateY(0)"
+            "translateX(0)"
         },
 
         {
-          opacity: 0,
           transform:
-            "translateY(-10px)"
+            "translateX(-5px)"
+        },
+
+        {
+          transform:
+            "translateX(5px)"
+        },
+
+        {
+          transform:
+            "translateX(-3px)"
+        },
+
+        {
+          transform:
+            "translateX(0)"
         }
       ],
       {
-        duration: 300,
-        easing: "ease",
-        fill: "forwards"
+        duration: 300
       }
     );
 
-
-    setTimeout(
-      () => renderPuzzle(),
-      320
-    );
-
-  }
-
-  else {
-
-    showMessage(
-      UI[language].incorrect
-    );
-
-    const input =
-      document.querySelector(
-        ".answer-input"
-      );
-
-    if (input) {
-
-      input.animate(
-        [
-          {
-            transform:
-              "translateX(0)"
-          },
-
-          {
-            transform:
-              "translateX(-5px)"
-          },
-
-          {
-            transform:
-              "translateX(5px)"
-          },
-
-          {
-            transform:
-              "translateX(-3px)"
-          },
-
-          {
-            transform:
-              "translateX(0)"
-          }
-        ],
-        {
-          duration: 300
-        }
-      );
-
-      input.select();
-    }
+    input.select();
   }
 }
 
@@ -506,7 +515,6 @@ function renderLinks() {
       unlocked
     );
 
-
   visibleLinks.forEach(
     (link, index) => {
 
@@ -517,7 +525,9 @@ function renderLinks() {
         "secret-link";
 
       anchor.href =
-        link.url;
+        normalizeUrl(
+          link.url
+        );
 
       anchor.target =
         "_blank";
@@ -528,6 +538,11 @@ function renderLinks() {
       anchor.style.animationDelay =
         `${index * 55}ms`;
 
+      anchor.setAttribute(
+        "aria-label",
+        `Link ${index + 1}`
+      );
+
 
       if (link.icon) {
 
@@ -535,7 +550,9 @@ function renderLinks() {
           document.createElement("img");
 
         image.src =
-          link.icon;
+          normalizeMediaPath(
+            link.icon
+          );
 
         image.alt =
           "";
@@ -568,7 +585,6 @@ function renderLinks() {
 
       }
 
-
       linksArea.appendChild(
         anchor
       );
@@ -593,6 +609,54 @@ function addFallbackSymbol(
   anchor.appendChild(
     symbol
   );
+}
+
+
+/* -------------------------
+   URL HELPERS
+------------------------- */
+
+function normalizeUrl(url) {
+  const value =
+    String(url || "").trim();
+
+  if (!value) {
+    return "#";
+  }
+
+  if (
+    value.startsWith("http://") ||
+    value.startsWith("https://") ||
+    value.startsWith("mailto:") ||
+    value.startsWith("tel:")
+  ) {
+    return value;
+  }
+
+  return `https://${value}`;
+}
+
+
+function normalizeMediaPath(path) {
+  const value =
+    String(path || "").trim();
+
+  if (!value) {
+    return "";
+  }
+
+  if (
+    value.startsWith("http://") ||
+    value.startsWith("https://")
+  ) {
+    return value;
+  }
+
+  if (value.startsWith("/")) {
+    return `.${value}`;
+  }
+
+  return value;
 }
 
 
@@ -694,6 +758,8 @@ resetButton.addEventListener(
     localStorage.removeItem(
       STORAGE_KEYS.unlocked
     );
+
+    resetPuzzleArea();
 
     render();
   }
