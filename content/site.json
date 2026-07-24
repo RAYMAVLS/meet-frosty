@@ -77,8 +77,9 @@
       ]
     },
     {
-      "enabled": false,
-      "url": "https://example.com/",
+      "enabled": true,
+      "url": "t.me/RaymAvls",
+      "icon": "/media/telegram-logo-telegram-logo-transparent-telegram-icon-transparent-free-free-png.webp",
       "riddle": {
         "es": "Hay algo que te pertenece, pero los demás lo usan más que tú. ¿Qué es?",
         "en": "Something belongs to you, but other people use it more than you do. What is it?",
