@@ -1,0 +1,103 @@
+{
+  "links": [
+    {
+      "enabled": true,
+      "url": "https://instagram.com/",
+      "icon": "https://cdn.simpleicons.org/instagram/eeeeee",
+      "riddle": {
+        "es": "Tengo ciudades, pero no casas. Tengo montañas, pero no árboles. Tengo agua, pero no peces. ¿Qué soy?",
+        "en": "I have cities, but no houses. Mountains, but no trees. Water, but no fish. What am I?",
+        "fr": "J'ai des villes, mais pas de maisons. Des montagnes, mais pas d'arbres. De l'eau, mais pas de poissons. Que suis-je ?",
+        "pt": "Tenho cidades, mas não casas. Montanhas, mas não árvores. Água, mas não peixes. O que sou?",
+        "de": "Ich habe Städte, aber keine Häuser. Berge, aber keine Bäume. Wasser, aber keine Fische. Was bin ich?"
+      },
+      "answers": [
+        "mapa",
+        "map",
+        "carte",
+        "mapa",
+        "karte"
+      ]
+    },
+
+    {
+      "enabled": true,
+      "url": "https://x.com/",
+      "icon": "https://cdn.simpleicons.org/x/eeeeee",
+      "riddle": {
+        "es": "Mientras más me quitas, más grande me vuelvo. ¿Qué soy?",
+        "en": "The more you take away from me, the larger I become. What am I?",
+        "fr": "Plus tu m'enlèves, plus je deviens grand. Que suis-je ?",
+        "pt": "Quanto mais você tira de mim, maior eu fico. O que sou?",
+        "de": "Je mehr du von mir wegnimmst, desto größer werde ich. Was bin ich?"
+      },
+      "answers": [
+        "agujero",
+        "hole",
+        "trou",
+        "buraco",
+        "loch"
+      ]
+    },
+
+    {
+      "enabled": true,
+      "url": "https://open.spotify.com/",
+      "icon": "https://cdn.simpleicons.org/spotify/eeeeee",
+      "riddle": {
+        "es": "Si me nombras, desaparezco. ¿Qué soy?",
+        "en": "If you name me, I disappear. What am I?",
+        "fr": "Si tu me nommes, je disparais. Que suis-je ?",
+        "pt": "Se você disser meu nome, eu desapareço. O que sou?",
+        "de": "Wenn du mich beim Namen nennst, verschwinde ich. Was bin ich?"
+      },
+      "answers": [
+        "silencio",
+        "silence",
+        "silence",
+        "silêncio",
+        "stille"
+      ]
+    },
+
+    {
+      "enabled": true,
+      "url": "https://discord.com/",
+      "icon": "https://cdn.simpleicons.org/discord/eeeeee",
+      "riddle": {
+        "es": "No tengo vida, pero puedo morir. No tengo pulmones, pero necesito aire. ¿Qué soy?",
+        "en": "I am not alive, yet I can die. I have no lungs, yet I need air. What am I?",
+        "fr": "Je ne suis pas vivant, pourtant je peux mourir. Je n'ai pas de poumons, pourtant j'ai besoin d'air. Que suis-je ?",
+        "pt": "Não tenho vida, mas posso morrer. Não tenho pulmões, mas preciso de ar. O que sou?",
+        "de": "Ich lebe nicht, doch ich kann sterben. Ich habe keine Lungen, brauche aber Luft. Was bin ich?"
+      },
+      "answers": [
+        "fuego",
+        "fire",
+        "feu",
+        "fogo",
+        "feuer"
+      ]
+    },
+
+    {
+      "enabled": true,
+      "url": "https://example.com/",
+      "icon": "https://cdn.simpleicons.org/github/eeeeee",
+      "riddle": {
+        "es": "Hay algo que te pertenece, pero los demás lo usan más que tú. ¿Qué es?",
+        "en": "Something belongs to you, but other people use it more than you do. What is it?",
+        "fr": "Quelque chose t'appartient, mais les autres l'utilisent plus que toi. Qu'est-ce que c'est ?",
+        "pt": "Algo pertence a você, mas os outros usam mais do que você. O que é?",
+        "de": "Etwas gehört dir, aber andere benutzen es häufiger als du. Was ist es?"
+      },
+      "answers": [
+        "nombre",
+        "name",
+        "nom",
+        "nome",
+        "name"
+      ]
+    }
+  ]
+}
